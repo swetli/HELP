@@ -1,26 +1,57 @@
 # SAP CHEAT SHEET
-## ON HDB host as sudo - <sid>adm:
+## To execute commands:
 ````
-HDB info - shows status
-HDB version - shows HANA version
-HDB start  - start HANA DB
+sudo - <SID>adm
+````
+
+## ON HANA Database host:
+#### Show HANA status
+
+````
+HDB info
+````
+#### Show HANA version
+````
+HDB version
+````
+#### To start HANA DB
+````
+HDB start
+````
+#### To stop HANA DB
+````
 HDB stop ( must be done before stopping the VM )
 ````
-## ON APP host as sudo - <sid>adm:
+## On Application host:
+
+#### To see if the DB is running
 ````
-R3trans -d - to see if the DB is running
+R3trans -d
+```` 
+#### To start all SAP components
+````
 startsap all
-sapcontrol -nr 00 -function GetProcessList
+````
+
+#### To get specific instance process status
+````
+sapcontrol -nr 00 -function GetProcessList 
 sapcontrol -nr 01 -function GetProcessList
+````
+#### To stop all SAP components
+````
 stopsap all
-sapcontrol -nr <NN> -host <host/ip> -function GetSystemInstanceList # TO check on remote host
+````
+#### To execute on remote host
+````
+sapcontrol -nr <NN> -host <host/ip> -function GetSystemInstanceList
 sapcontrol -nr <NN> -host <host/ip> -function StartSystem ALL
 sapcontrol -nr <NN> -host <host/ip> -user <sid>adm <password> -function StartSystem ALL
 ````
-# To see license
+#### To check hardware key and license
 ````
-saplikey -get pf=/usr/sap/VSC/SYS/profile/DEFAULT.PFL ( to get the hw key )
-saplikey -show pf=/usr/sap/VSC/SYS/profile/DEFAULT.PFL
+saplikey -get pf=/usr/sap/VSC/SYS/profile/DEFAULT.PFL - hw key
+saplikey -show pf=/usr/sap/VSC/SYS/profile/DEFAULT.PFL - license
 ````
 
 GUI:
@@ -60,6 +91,9 @@ env sap kernel overridden by default profile or <instance profile (SID_instance_
 Most changes require restart of the sap system
 
 Operation mode : day vs night diaglog vs background processes
+
+Changes in SAP systems are recorded in "SAP Transports" - which represent versioning of the changes of the SAP objects.
+Those transports represent two files on OS level.
 
 DB->PAS->SAS
 
