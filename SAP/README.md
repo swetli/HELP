@@ -50,8 +50,8 @@ sapcontrol -nr <NN> -host <host/ip> -user <sid>adm <password> -function StartSys
 ````
 #### To check hardware key and license
 ````
-saplikey -get pf=/usr/sap/VSC/SYS/profile/DEFAULT.PFL - hw key
-saplikey -show pf=/usr/sap/VSC/SYS/profile/DEFAULT.PFL - license
+saplikey -get pf=/usr/sap/VSC/SYS/profile/DEFAULT.PFL # hw key
+saplikey -show pf=/usr/sap/VSC/SYS/profile/DEFAULT.PFL # license
 ````
 
 GUI:
@@ -101,7 +101,7 @@ DB->PAS->SAS
 ````
 SM21 - See logs of the SAP system - F8.
 SM20 - See audit logs of the SAP system - F8.
-ST22 - See application errors. 
+ST22 - See application and runtime errors. 
 SM50 - See table of work process in current instances.
 SM51 - See all instances in the SAP system.
 SM66 - See work processes of all instances.
@@ -109,6 +109,8 @@ SM36 - Create background job
 SM37 - See filtered list of all job executed in the SAP system.
 SM04 - See list of logged users in current instance.
 SM59 - Configure RFC connections
+SE37 - Function builder for ABAP
+SE38 - Invoke ABAP editor
 AL08 - See list of logged users in all instances.
 SM12 - See and delete data locks - F8.
 SM13 - See update request and failed updates.
