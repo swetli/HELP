@@ -22,13 +22,18 @@ git commit -am "commit message" # Add files and commit
 git push origin 1803-9342-terraform-provisioning
 ````
 
+#### Delete remote branch
+````
+git push origin :1803-9342-terraform-provisioning
+````
 #### Discard local commits and get remote origin state
 ````
 git reset --hard origin/master
 ````
 #### List branches
 ````
-git branch -a
+git branch -a # List local
+git branch -r # List remote
 ````
 #### Switch branches
 ````
