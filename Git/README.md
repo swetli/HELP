@@ -39,3 +39,7 @@ git branch -r # List remote
 ````
 git checkout <branch-name>
 ````
+#### Set local branch to track remote branch
+````
+git checkout --track origin/dev
+````
