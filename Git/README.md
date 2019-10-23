@@ -43,3 +43,11 @@ git checkout <branch-name>
 ````
 git checkout --track origin/dev
 ````
+#### Revert to specific commit and push to master
+````
+git checkout <commit-id>
+git rebase
+git commit
+git push origin master
+````
+
